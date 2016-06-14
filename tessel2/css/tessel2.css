@@ -1,0 +1,66 @@
+.t2-gif {
+  background: url(../img/blinking.gif) no-repeat center center fixed; 
+  background-size: cover;
+}
+
+.usb-drive {
+  background: url(../img/usb.gif) no-repeat center center fixed; 
+  background-size: cover;
+}
+
+.code-snippet {
+  background: url(../img/js.gif) no-repeat center center fixed; 
+  background-size: cover;
+}
+
+.dropbox-gif {
+  background: url(../img/dropbox.gif) no-repeat center center fixed; 
+  background-size: cover;
+}
+
+.kinda {
+  background: url(../img/kinda-2.gif) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.t2-angle {
+  background: url(../img/tessel-angle.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.t2-big {
+  background: url(../img/tessel-big.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.tessel-github {
+  background: url(../img/t2-cli-labels.png) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.nodejs {
+  background: url(../img/nodejs.png) no-repeat center center fixed;
+  background-size: cover;
+}
+
+#local-url {
+  font-size: 3.11em;
+}
+
+.reveal section img {
+  border: none;
+}
+
+section .logo img {
+  border: none;
+  box-shadow: none;
+
+  margin-left: 55px;
+
+  max-height: 200px;
+  max-width: 200px;
+}
+
+section h3 code {
+  text-transform: lowercase;
+}

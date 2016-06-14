@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Your Own Dropbox: Getting Started with a Tessel 2</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/beige.css">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!-- Presentation-specific styling -->
+		<link rel="stylesheet" href="css/tessel2.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section class="t2-gif">
+					<section>
+						<h1>
+							Your Own Dropbox: Getting Started with the Tessel 2
+						</h1>
+					</section>
+				</section>
+				<section class="t2-gif">
+					<section></section>
+				</section>
+				<section class="usb-drive">
+					<section></section>
+				</section>
+				<section class="code-snippet">
+					<section></section>
+				</section>
+				<section class="dropbox-gif">
+					<section></section>
+				</section>
+				<section class="kinda">
+					<section></section>
+				</section>
+				<section class="t2-angle">
+					<section>
+						<aside class="notes">
+	        		<ul>
+	        			<li>plug 'n' play development board</li>
+	        			<li>On-board wifi & ethernet</li>
+	        			<li>64mb of RAM and 32mb flash mem</li>
+	        			<!-- <li>OS HW & SW</li> -->
+	        			<!-- <li>Runs Node.js natively</li> -->
+	        			<!-- <li>2 Tessel modules & 2 USB ports</li> -->
+	        		</ul>
+	    			</aside>
+					</section>
+				</section>
+				<section>
+					<div class="logo">
+						<img src="img/osi_logo.png" />
+						<img src="img/oshw-logo.png" />
+					</div>
+				</section>
+				<section class="tessel-github">
+					<section></section>
+				</section>
+				<section class="modules">
+					<img data-src="img/add-module.gif" />
+					<aside class="notes">
+						"connected hardware as easy as npm install"
+					</aside>
+				</section>
+				<section class="usb-device">
+					<img data-src="img/usb-camera.png" />
+				</section>
+				<section class="nodejs">
+					<section>
+						<aside class="notes">
+							If you can add an event listener to a button, you can write code for this hardware.
+						</aside>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Common Commands & Workflow</h2>
+						<section data-markdown>
+							```
+							npm install -g t2-cli
+
+							t2 list
+							
+							t2 wifi -n &lt;network> -p &lt;password>
+
+							t2 provision
+
+							t2 update
+
+							t2 erase
+							```
+						</section>
+					</section>
+					<section>
+						<h3><code>t2 ap -n myTessel</code></h3>
+						<img data-src="img/tessel-ap.png" />
+					</section>
+					<section>
+						<h3><code>t2 run webserver.js</code></h3>
+						<img data-src="img/t2-run.gif" />
+					</section>
+					<section>
+						<h3><code>t2 push webserver.js</code></h3>
+						<img data-src="img/t2-push.gif" />
+					</section>
+				</section>
+				<section>
+					<h2>Getting Started</h2>
+					<img data-src="img/usb-mixtape.gif">
+				</section>
+				<section>
+					<h2>Code</h2>
+					<em>
+						https://tessel.github.io/t2-start/modules/storage.html
+					</em>
+				</section>
+				<section>
+					<h2 id="local-url">http://rascal.local:8080</h2>
+				</section>
+				<section>
+					<h1>Thank you!</h1>
+					<!-- todo: add link to slides repo -->
+					<h2>Slides: <a href="https://github.com/chrisbodhi/"></a></h2>
+					<h2>Tesselbox Repo: <a href="https://github.com/chrisbodhi/tesselbox">https://git.io/voCRb</a></h2>
+					<h3>tw & gh: @chrisbodhi</h3>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
