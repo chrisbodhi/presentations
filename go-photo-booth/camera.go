@@ -32,25 +32,17 @@ func main() {
 	fmt.Println("Press space bar to photograph and press ESC to quit")
 	// END SETUP OMIT
 
+	// CAMERA LOOP START OMIT
 	for {
 		if cap.GrabFrame() {
 			img := cap.RetrieveFrame(1)
 			if img != nil {
 				faces := cascade.DetectObjects(img)
 				for _, value := range faces {
-
-					opencv.Rectangle(
-						img,
-						opencv.Point{
-							value.X() - 15,
-							value.Y() - 75,
-						},
-						opencv.Point{
-							value.X() + value.Width() + 45,
-							value.Y() + value.Height() + 150,
-						},
+					opencv.Rectangle(img,
+						opencv.Point{value.X(), value.Y()},
+						opencv.Point{value.X(), value.Y()},
 						opencv.ScalarAll(255.0), 3, 1, 0)
-
 				}
 
 				win.ShowImage(img)
@@ -58,12 +50,11 @@ func main() {
 				fmt.Println("nil image")
 			}
 		}
-
-		key := opencv.WaitKey(1)
-
 		// Exit with the ESC key
+		key := opencv.WaitKey(1)
 		if key == 27 {
 			os.Exit(0)
 		}
 	}
+	// CAMERA LOOP END OMIT
 }

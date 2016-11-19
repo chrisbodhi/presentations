@@ -50,3 +50,13 @@ https://newschematic.org
 .image haar_features.jpg
 
 .image haar.png
+
+* Taking Pictures: Camera Loop
+
+.code camera.go /CAMERA LOOP START/,/CAMERA LOOP END/
+
+* Loops
+
+  for { }
+
+
