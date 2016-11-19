@@ -35,3 +35,18 @@ https://newschematic.org
 
 .code camera.go /DEFER START OMIT/,/DEFER END OMIT/ HLdef
 
+* Error Handling
+
+.image huge_mistake.jpg
+
+* Taking Pictures: Panics and Errors
+
+.code camera.go /ERR START OMIT/,/ERR END OMIT/ HLerr
+
+* Taking Pictures: OpenCV
+
+.code camera.go /cascade :/,/xml\"\)\)/ HLhaa
+
+.image haar_features.jpg
+
+.image haar.png

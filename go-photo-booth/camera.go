@@ -13,18 +13,21 @@ func main() {
 	// DEFER START OMIT
 	win := opencv.NewWindow("Aether")
 	defer win.Destroy() // HLdef
-
+	// ERR START OMIT
 	cap := opencv.NewCameraCapture(0)
-	if cap == nil {
-		panic("cannot open camera")
-	}
+	if cap == nil { // HLerr
+		panic("cannot open camera") // HLerr
+	} // HLerr
 	defer cap.Release() // HLdef
 	// DEFER END OMIT
-	cwd, err := os.Getwd()
-	if err != nil {
-		panic(err)
-	}
-	cascade := opencv.LoadHaarClassifierCascade(path.Join(cwd, "haarcascade_frontalface_alt.xml"))
+
+	cwd, err := os.Getwd() // HLerr
+	if err != nil { // HLerr
+		panic(err) // HLerr
+	} // HLerr
+	// ERR END OMIT
+
+	cascade := opencv.LoadHaarClassifierCascade(path.Join(cwd, "haarcascade_frontalface_alt.xml")) // HLhaa
 
 	fmt.Println("Press space bar to photograph and press ESC to quit")
 	// END SETUP OMIT
