@@ -55,8 +55,14 @@ https://newschematic.org
 
 .code camera.go /CAMERA LOOP START/,/CAMERA LOOP END/
 
-* Loops
+* Loops with `for` and `range`
 
-  for { }
+useful for not knowing how many elements are in your slice
+
+for _, elem := range list {}
+
+* Ranges
+
+* Saving Pictures
 
 
