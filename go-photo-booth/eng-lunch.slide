@@ -1,0 +1,80 @@
+Using Go with OpenCV
+or, How I Enjoy Making My Life More Difficult
+21 Nov 2016
+Tags: golang, processing, photo booth, command line tools
+
+Chris Boette
+Software Engineer, OwnLocal
+boette@ownlocal.com
+https://newschematic.org
+@chrisbodhi
+
+* Making Interactive Art Interactive
+
+"PowerPoint is just simulated acetate overhead slides, and to me, that is a kind of a moral crime." -- Alan Kay
+
+.image http://s2.quickmeme.com/img/32/3279e88a26d718dcad0689a47663d5d08ff8b162090222b0b43f719ebd6ad340.jpg
+
+.link http://www.drdobbs.com/architecture-and-design/interview-with-alan-kay/240003442?pgno=2 quote src
+
+* OpenCV Libraries
+
+.image gobot.png _ 666
+.image gh-opencv-shot.png _ 666
+
+* Taking Pictures
+
+.image taking_photos.png _ 666
+
+* Taking Pictures: Setup
+
+.play camera.go /START SETUP OMIT/,/END SETUP OMIT/
+
+* Taking Pictures: OpenCV
+
+.code camera.go /cascade :/,/xml\"\)\)/ HLhaa
+
+.image haar_features.jpg
+
+.image haar.png
+
+* Taking Pictures: Camera Loop
+
+.code camera.go /CAMERA LOOP START/,/CAMERA LOOP END/ HLran
+
+* Saving and Cropping
+
+.code save.go
+
+* Command Line Tools
+
+*** Do the art
+
+  processing-java --sketch=`pwd` --output=`pwd`/output --force --run
+
+*** Make a gif
+
+  gifsicle --delay=3 -O3 --loop artifacts/f*.gif > glitch.gif
+
+* Tumblr Post
+
+.code tumblr.go
+
+* Clean Up
+
+.code clean.go
+
+* Tying it all together
+
+  #!/bin/sh
+
+  go run webcam_facedetect.go
+  && processing-java --sketch=`pwd` --output=`pwd`/output --force --run
+  && gifsicle --delay=3 -O3 --loop artifacts/f*.gif > glitch.gif
+  && ruby post-to-tumblr.rb
+
+* Final Product: d̼̫͎a̘̻͍̟͉̫̖d̤a̞̜̦̥̭͇̤ ̯̣p̜͇̰̦̜h͉͉̠
+
+.image glitched.gif
+
+.link http://dadaphotobooth.tumblr.com/ tumblr
