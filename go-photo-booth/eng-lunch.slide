@@ -1,4 +1,4 @@
-Using Go with Processing, OpenCV, and the Command Line
+Using Go with OpenCV
 or, How I Enjoy Making My Life More Difficult
 21 Nov 2016
 Tags: golang, processing, photo booth, command line tools
@@ -29,10 +29,6 @@ https://newschematic.org
 * Taking Pictures: Setup
 
 .play camera.go /START SETUP OMIT/,/END SETUP OMIT/
-
-* Taking Pictures: Defer
-
-.code camera.go /DEFER START OMIT/,/DEFER END OMIT/ HLdef
 
 * Taking Pictures: OpenCV
 
