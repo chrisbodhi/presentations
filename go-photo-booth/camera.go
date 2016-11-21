@@ -38,7 +38,7 @@ func main() {
 			img := cap.RetrieveFrame(1)
 			if img != nil {
 				faces := cascade.DetectObjects(img)
-				for _, value := range faces {
+				for _, value := range faces { // HLran
 					opencv.Rectangle(img,
 						opencv.Point{value.X(), value.Y()},
 						opencv.Point{value.X(), value.Y()},
