@@ -1,1 +1,1 @@
-Uses the Go Present tool.
+Uses the [Go Present tool](https://godoc.org/golang.org/x/tools/present) -- install the tool & run `present` from this directory. Then, go to the specified address in your browser & use the arrow keys to go through the slides.
