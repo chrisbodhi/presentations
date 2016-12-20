@@ -5,7 +5,7 @@ Tags: manifest, parsing, pipeline, node.js, lambdas
 
 Chris Allen, Chris Boette, John Burge, Bradley Harrington
 Partner Team, OwnLocal
-partner-eng@ownlocal.com
+partner.eng@ownlocal.com
 https://github.com/OwnLocal/PipelineOrchestra
 
 * Parsers! Parsers Everywhere!
@@ -35,7 +35,7 @@ https://github.com/OwnLocal/PipelineOrchestra
 
 * Write a Config
 
-.image config_screen.png
+.image config_screen.png _ 500
 
 * Manifest Upload
 
