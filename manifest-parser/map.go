@@ -1,8 +1,14 @@
 {
   "transformation_json": {
-    "ad": { "file_name": "appendPdf" },
-    "business": { "contact_info": {
-      "phone": "removeNonAlphanumeric" }}},
+    "ad": { // HL
+      "file_name": "appendPdf" // HL
+    }, // HL
+    "business": { // HL
+      "contact_info": { // HL
+        "phone": "removeNonAlphanumeric" // HL
+      } // HL
+    } // HL
+  },
   "mapped_manifest": [{
     "ad": { "custom_id": "1111", "file_name": "chris666" },
     "business": {

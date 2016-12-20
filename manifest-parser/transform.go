@@ -10,11 +10,11 @@
     "name": "Chris Store",
     "contact_info": {
       "phone": "6099996415" // HL
-    }},
-    {
-      "name": "Boette Store",
-      "contact_info": {
-        "phone": "6096666415" // HL
-    }}
-  ]
+    }
+  }, {
+    "name": "Boette Store",
+    "contact_info": {
+      "phone": "6096666415" // HL
+    }
+  }]
 }

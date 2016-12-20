@@ -18,7 +18,7 @@
     "publisher_uuid": "0f98d4f9-d820-4a4e-bbf7-31b2ec58a771" },
   "file": {
     "type": "Buffer",
-    "data": [1, 2, 3, 42]
+    "data": [1, 2, 3, 42]     // HL
   },
   "filename": "test.csv"
 }

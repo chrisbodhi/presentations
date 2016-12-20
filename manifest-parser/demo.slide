@@ -24,10 +24,14 @@ https://github.com/OwnLocal/PipelineOrchestra
 
 - Write a Config
 - Manifest Upload
+- Get the Publisher's Config
+- Off to AWS
 - Parse
 - Map
+- An Aside: The Transformation Library
 - Transform
-- Save It
+- Poster
+- Save Ads & Businesses
 
 * Write a Config
 
@@ -50,15 +54,19 @@ https://github.com/OwnLocal/PipelineOrchestra
 
 .code input.go
 
-* Parsing
+* Parse
 
 .code parse.go
 
-* Mapping
+* Map
 
 .code map.go
 
-* Transforming
+* An Aside: The Transformation Library
+
+.code lib-transform.go
+
+* Transform
 
 .code transform.go
 
@@ -67,3 +75,5 @@ https://github.com/OwnLocal/PipelineOrchestra
 .image save_ad_biz.gif _ 666
 
 * Demo
+
+* Questions, Comments, Concerns?
