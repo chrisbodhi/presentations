@@ -1,0 +1,141 @@
+Parsing Manifests with Configs!
+or, Leave the Copy-Pasta in the Pantry, We're Going out for Dinner
+21 Dec 2016
+Tags: manifest, parsing, pipeline, node.js, lambdas
+
+Chris Allen, Chris Boette, John Burge, Bradley Harrington
+Partner Team, OwnLocal
+partner-eng@ownlocal.com
+https://github.com/OwnLocal/PipelineOrchestra
+
+* Parsers! Parsers Everywhere!
+
+.image af_parser_list.gif
+
+* Not That Diff
+
+.image diff.png _ 999
+
+* Pipelines! Pipelines Everywhere!
+
+.image parser_pipeline_diagram.png _ 777
+
+* One Bite At a Time
+
+- Write a Config
+- Manifest Upload
+- Parse
+- Map
+- Transform
+- Save It
+
+* Write a Config
+
+.image config_screen.png
+
+* Manifest Upload
+
+.image ftp.gif _ 666
+
+* Get the Publisher's Config
+
+.image get_pub_config.gif _ 666
+
+* Off to AWS
+
+.image aw_1.gif _ 300
+.image aw_2.gif _ 300
+
+* Input
+
+  {
+    "uuid": "93a55345-24ae-4ac1-8374-703eba848028",
+    "config": "{
+      'detail_file_type': {'headers': true, 'col_separation': ',', 'encoding': 'utf-8'},
+      'mappings': {
+        'ad': {'custom_id': 'Account: Account ID', 'file_name': 'Production: Production Number'},
+        'business': {'name': 'Account: Account Name', 'contact_info': {
+          'phone': 'Account: Phone', 'website': 'Account: Website'}}},
+      'transformations': {
+        'ad': {'file_name': 'appendPdf'},
+        'business': {'contact_info': {
+          'phone': 'removeNonAlphanumeric'}}},
+      'publisher_uuid': '0f98d4f9-d820-4a4e-bbf7-31b2ec58a771'}",
+    "file": {
+      "type": "Buffer",
+      "data": [
+        65,
+        ...,
+        116
+      ]
+    },
+    "filename": "test.csv"
+  }
+
+* Parsing
+
+  {
+    "mappings": {
+      "ad": {"custom_id": "Account: Account ID", "file_name": "Production: Production Number"},
+      "business": {"name": "Account: Account Name", "contact_info": {
+        "phone": "Account: Phone", "website": "Account: Website"}}},
+    "transformations": {
+      "ad": {"file_name": "appendPdf"},
+      "business": {"contact_info": {
+        "phone": "removeNonAlphanumeric"
+      }}},
+    "rows": [{
+      "Account: Account ID": "1111",
+      "Account: Account Name": "Chris Store",
+      "Production: Production Number": "chris666",
+      "Account: Phone": "(609) 999-6415"
+    }, {
+      "Account: Account ID": "2222",
+      "Account: Account Name": "Boette Store",
+      "Production: Production Number": "boette666",
+      "Account: Phone": "(609) 666-6415"
+    }],
+    "publisherUuid": "0f98d4f9-d820-4a4e-bbf7-31b2ec58a771"
+  }
+
+* Mapping
+
+  {
+    "transformation_json": {
+      "ad": { "file_name": "appendPdf"},
+      "business": { "contact_info": {
+        "phone": "removeNonAlphanumeric"}}},
+    "mapped_manifest": [{
+      "ad": {"custom_id": "1111", "file_name": "chris666"},
+      "business": {
+        "name": "Chris Store",
+        "contact_info": {"phone": "(609) 999-6415", "website": "www.capemaycountygov.net"}
+      }},
+      {
+        "ad": {"custom_id": "2222", "file_name": "boette666"},
+        "business": {
+          "name": "Boette Store",
+          "contact_info": {"phone": "(609) 666-6415", "website": "www.capemaycountygov.net"}
+        }}],
+    "publisherUuid": "0f98d4f9-d820-4a4e-bbf7-31b2ec58a771"
+  }
+
+* Transforming
+
+  {
+    "data": [{
+      "ad": {"custom_id": "1111", "file_name": "chris666.pdf"},
+      "business": {
+        "name": "Chris Store",
+        "contact_info": {"phone": "6099996415", "website": "www.capemaycountygov.net"}
+      }},
+      {
+        "ad": {"custom_id": "2222", "file_name": "boette666.pdf"},
+        "business": {
+          "name": "Boette Store",
+          "contact_info": {"phone": "6096666415", "website": "www.capemaycountygov.net"}
+      }}],
+    "publisher_uuid": "0f98d4f9-d820-4a4e-bbf7-31b2ec58a771"
+  }
+
+* Save It
